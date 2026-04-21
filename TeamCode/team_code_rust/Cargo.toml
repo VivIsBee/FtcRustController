@@ -4,14 +4,16 @@ version = "0.0.0"
 edition = "2024"
 
 [dependencies]
-ftc = { path = "../ftc-rust", version = "11.0.0" }
+ftc = { path = "../ftc-rust", version = "11.1.0" }
 
 [lib]
 name = "team_code_rust"
 crate-type = ["cdylib"]
 
 [lints.rust]
-missing_docs = "warn"
+missing_docs = "deny"
+missing_debug_implementations = "warn"
+unused_import_braces = "warn"
 
 [lints.clippy]
 missing_docs_in_private_items = "warn"
@@ -21,10 +23,9 @@ ignore_without_reason = "warn"
 alloc_instead_of_core = "warn"
 as_underscore = "warn"
 assertions_on_result_states = "warn"
-panic = "warn"
-unwrap_used = "warn"
 cast_possible_truncation = "allow"
 cast_sign_loss = "allow"
 cast_precision_loss = "allow"
 cast_possible_wrap = "allow"
 too_many_lines = "allow"
+missing_panics_doc = "allow"

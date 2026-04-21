@@ -20,6 +20,8 @@ android {
 
     packagingOptions {
         jniLibs.useLegacyPackaging true
+        doNotStrip "*/arm64-v8a/*.so"
+        doNotStrip "*/armeabi-v7a/*.so"
     }
 }
 
@@ -47,6 +49,8 @@ cargo {
     libname = "team_code_rust"
     targets = ["arm", "arm64"]
     apiLevel = 29
+    extraCargoBuildArguments = ["-C", "debuginfo=2"]
+    profile = "debug"
 }
 
 tasks.configureEach { task ->

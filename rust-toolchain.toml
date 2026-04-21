@@ -1,3 +1,11 @@
 [toolchain]
-channel = "1.91"
+channel = "1.95"
 targets = ["armv7-linux-androideabi", "aarch64-linux-android"]
+components = [
+    "cargo",
+    "clippy",
+    "rustc",
+    "rust-analyzer",
+    "rustfmt",
+    "rust-std",
+]
